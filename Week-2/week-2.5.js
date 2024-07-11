@@ -2,7 +2,7 @@
 // Express is not a default library.
 
 const express = require("express");
-const port = 3000;
+
 
 const app = express();
 
@@ -26,7 +26,7 @@ app.get("/", function(req, res) {
 
 const express = require('express');
 const port = 3000;
-const app = express();
+
 
 var users = [{
     name: 'John',
