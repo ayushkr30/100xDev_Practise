@@ -7,7 +7,7 @@ mongoose.connect(
 
 );
 
-const User = mongoose.model("User", {
+const User1 = mongoose.model("User", {
     name: String,
     username: String,
     password: String,
@@ -51,3 +51,39 @@ app.get("/users", function(req,res){
 });
 
 app.listen(3000);
+
+//  Sending Data through HTTP Server
+
+const express = require("express");
+const mongoose = require("mongoose");
+
+const app2 = express();
+
+app.use(express.json());
+
+mongoose.connect("mongodb+srv://ayushpal2017ak:palAyush%4030@cluster0.asqwqga.mongodb.net/")
+
+const User = mongoose.model('Users', { name: String, email: String, password: String});
+
+app.post("/signup", async function(req,res){
+   const username1 = req.body.username1;
+   const password1 = req.body.password1;
+   const name1 = req.body.name1;
+
+   const existingUser = await User.findOne({ email: username1});
+
+   if(existingUser){
+    return res.status(400).send("Username already exists");
+   }
+
+   const user2 = new User({
+    name: name1,
+    email: username1,
+    password: password1
+   });
+
+   user2.save();
+   res.json({
+    msg: "User created Successfully"
+   });
+})
