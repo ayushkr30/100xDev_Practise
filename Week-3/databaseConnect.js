@@ -61,7 +61,7 @@ const app2 = express();
 
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://ayushpal2017ak:palAyush%4030@cluster0.asqwqga.mongodb.net/")
+mongoose.connect("mongodb+srv://ayushpal2017ak:@cluster0.asqwqga.mongodb.net/")
 
 const User = mongoose.model('Users', { name: String, email: String, password: String});
 
