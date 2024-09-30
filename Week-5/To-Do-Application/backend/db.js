@@ -7,6 +7,7 @@ ToDo {
 */
 const mongoose = require("mongoose");
 
+mongoose.connect("mongodb+srv://ayushpal2017ak:palAyush%4030@cluster0.asqwqga.mongodb.net/")
 
 const todoSchema = mongoose.Schema({
     title: String,

@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <CreateTodo></CreateTodo>
-      <Todos></Todos>
+      <Todos ></Todos>
     </div>
 
       
