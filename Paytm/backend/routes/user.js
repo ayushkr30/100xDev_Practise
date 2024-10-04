@@ -2,7 +2,7 @@ const express = require('express');
 const zod = require("zod");
 const jwt = require("jsonwebtoken");
 const {JWT_SECRET } = require("../config");
-const { User } = require("./db");
+const { User } = require("../db");
 const router = express.Router();
 const { authMiddleware } = require("../middleware");
 
@@ -91,7 +91,7 @@ router.post("/signin", async(req, res) => {
 
 const updateBody = zod.object({
     password: zod.string().optional(),
-    firstName: zod.string.optional(),
+    firstName: zod.string().optional(),
     lastName: zod.string().optional(),
 })
 
